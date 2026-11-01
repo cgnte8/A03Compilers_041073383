@@ -1,0 +1,10 @@
+.vs/
+**/.vs/
+
+build/
+cmake-build-*/
+
+*.exe
+*.dll
+*.obj
+*.pdb

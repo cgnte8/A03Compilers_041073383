@@ -1,4 +1,4 @@
-# Makefile for A02
+# Makefile for A03
 
 cmake_minimum_required (VERSION 3.8)
 
@@ -15,6 +15,7 @@ add_executable (Biology
 	"include/Biology.h"		"src/Biology.c"
 	"include/Step1Cell.h"	"src/Step1Cell.c"		"src/Main1Cell.c"
 	"include/Step2Tissue.h"	"src/Step2Tissue.c"		"src/Main2Tissue.c"
+	"include/Step3Organ.h"	"src/Step3Organ.c"		"src/Main3Organ.c"
   )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

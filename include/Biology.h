@@ -116,6 +116,7 @@ stage(s) actually included in this folder are declared)
 */
 STEL_int main1Cell      (STEL_int argc, STEL_string* argv); /* Coder - invokes Main1Cell code */
 STEL_int main2Tissue    (STEL_int argc, STEL_string* argv); /* Reader - invokes Main2Tissue code */
+STEL_int main3Organ		(STEL_int argc, STEL_string* argv);	/* Scanner - invokes Main3Organ code */
 
 STEL_void printLogo();
 STEL_void errorPrint(STEL_string fmt, ...);
