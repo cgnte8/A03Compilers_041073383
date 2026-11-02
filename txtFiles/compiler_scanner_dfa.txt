@@ -1,0 +1,57 @@
+
+[CHAR_CLASSES]
+# Letter, Digit, u=_ , p=. , i=$ , f=% , s=@ , m=& , q=" , c=# , END , OTHER, NEWLINE
+L|D|U|P|I|F|S|M|Q|C|E|O|N
+
+[KEYWORDS]
+STEL_data
+STEL_code
+STEL_int
+STEL_float
+STEL_string
+
+if
+then
+else
+while
+do
+return
+
+pout
+
+abs
+sqrt
+pow
+exp
+log
+log10
+sin
+cos
+tan
+asin
+acos
+atan
+sinh
+cosh
+tanh
+ceil
+floor
+fmod
+
+[DFA]
+# STATE |  L|  D|  U|  P|  I|  F|  S|  M|  Q|  C|  E|  O| STATE_TYPE|ACTION
+       0|  1|  2| 16| 16| 16| 16| 16| 16|  4|  6| 16| 16|	NOFS|NULL
+       1|  1|  1|  1| 12| 15| 15| 15| 15| 12| 12| 12| 12|	NOFS|NULL
+       2| 16|  2| 16|  3| 16| 16| 16| 16| 13| 13| 13| 16|	NOFS|NULL
+       3| 16|  8| 16| 16| 16| 16| 16| 16| 16| 16| 16| 16|	NOFS|NULL
+       4|  4|  4|  4|  4|  4|  4|  4|  4|  5|  4| 16|  4|	NOFS|NULL
+       5| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18|	FSNR|STRING
+       6|  6|  6|  6|  6|  6|  6|  6|  6|  6|  7| 16|  6|	NOFS|NULL
+       7| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18|	FSNR|COMMENT
+       8| 16|  8| 16| 16| 16| 16| 16| 16| 16| 14| 14| 14|	NOFS|NULL
+      12| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18|	FSWR|KEYWORD
+      13| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18|	FSWR|INTEGER
+      14| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18|	FSWR|FLOAT
+      15| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18|	FSNR|IDENTIFIER
+      16| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18|	FSNR|ERROR
+      17| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18| 18|	FSWR|ERROR

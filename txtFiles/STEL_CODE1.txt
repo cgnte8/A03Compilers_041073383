@@ -1,18 +1,19 @@
-~ Stella Code Example 1 ~
-~ This example contains a simple set value ~
-~ This example also contains a simple print value ~
+# Stella Code Example 1 
+  This example contains a simple set value 
+  This example also contains a simple print value 
+#
 
-STEL_int main() 
+STEL_int main@() 
 {
-	STEL_data@ 
+	STEL_data 
 	{
-		STEL_string^ text#;
+		STEL_string text&;
 	}
 	
-	STEL_code@
+	STEL_code
 	{
-		text# = "Hello World!";
-		pout(text#);
+		text& = "Hello World!";
+		pout@(text&);
 		return 0;
 	}
 }
