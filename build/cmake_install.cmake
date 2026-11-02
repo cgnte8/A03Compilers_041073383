@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/School/Classes/Year 3/Sem 1/Compilers/A03
+# Install script for directory: /mnt/c/Connor/School/Classes/Year 3/Sem 1/Compilers/Work/A03/A03Compilers_041073383
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/School/Classes/Year 3/Sem 1/Compilers/A03/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Connor/School/Classes/Year 3/Sem 1/Compilers/Work/A03/A03Compilers_041073383/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

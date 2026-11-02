@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/c/School/Classes/Year 3/Sem 1/Compilers/A03"
+CMAKE_SOURCE_DIR = "/mnt/c/Connor/School/Classes/Year 3/Sem 1/Compilers/Work/A03/A03Compilers_041073383"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/c/School/Classes/Year 3/Sem 1/Compilers/A03/build"
+CMAKE_BINARY_DIR = "/mnt/c/Connor/School/Classes/Year 3/Sem 1/Compilers/Work/A03/A03Compilers_041073383/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/School/Classes/Year 3/Sem 1/Compilers/A03/build/CMakeFiles" "/mnt/c/School/Classes/Year 3/Sem 1/Compilers/A03/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Connor/School/Classes/Year 3/Sem 1/Compilers/Work/A03/A03Compilers_041073383/build/CMakeFiles" "/mnt/c/Connor/School/Classes/Year 3/Sem 1/Compilers/Work/A03/A03Compilers_041073383/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/School/Classes/Year 3/Sem 1/Compilers/A03/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Connor/School/Classes/Year 3/Sem 1/Compilers/Work/A03/A03Compilers_041073383/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target

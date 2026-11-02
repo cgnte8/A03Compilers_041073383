@@ -48,7 +48,7 @@ includes Biology.h and reuses the constant below instead of
 redefining it locally.
 ------------------------------------------------------------
 */
-#define DEFAULT_DFA_FILE      "compiler_scanner_dfa.csv"
+#define DEFAULT_DFA_FILE      "compiler_scanner_dfa.txt"
 #define DEFAULT_GRAMMAR_FILE  "compiler_parser_grammar.txt"
 #define DEFAULT_RUNNER_CONFIG "compiler_runner_config.txt"
 

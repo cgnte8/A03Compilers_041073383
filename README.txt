@@ -52,9 +52,7 @@ Scripts
 
 Test inputs
 -----------
-  InputExample0-6.txt   valid programs (InputData3.txt feeds input& of example 3)
-  ErrorExample1.txt     lexical errors          ErrorExample3.txt  runtime error
-  ErrorExample2.txt     syntax errors           ErrorExample4.txt  semantic error
+
 
 Adapt the language
 ------------------

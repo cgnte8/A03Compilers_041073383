@@ -1,0 +1,25 @@
+# Stella Code Example 1			    #
+# This example contains Method identifiers  #
+# This example contains data types          #
+# This example prints the data types        #
+# Connor Guenette - 041073383               #
+
+STEL_int main&() 
+{
+	STEL_data 
+	{	
+		STEL_int age$;
+		STEL_float height%;
+		STEL_string name@;
+	}
+	
+	STEL_code
+	{
+		age$ = 23;
+		height% = 5.9;
+		name@ = "Connor Guenette";
+
+		pout&(name@);
+	}
+	return 0;
+}

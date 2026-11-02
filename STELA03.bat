@@ -24,6 +24,8 @@ src\Main1Cell.c ^
 src\Step1Cell.c ^
 src\Step2Tissue.c ^
 src\Main2Tissue.c ^
+src\Step3Organ.c ^
+src\Main3Organ.c ^
 -lm
 
 if errorlevel 1 (
@@ -31,9 +33,13 @@ echo [ERROR] Build failed.
 exit /b 1
 )
 
+REM Change this to whichever example you want to work with
+set "INPUT_FILE=txtFiles\Error_Example1.txt"
+REM ------------------------------------------------------
+
 echo.
-echo === [1] Cell: Encode STEL_CODE1.txt -^> CODED.TXT ===
-biology.exe 1 1 txtFiles\STEL_CODE1.txt txtFiles\CODED.txt
+echo === [1] Cell: Encode Input_Example1-5 || Error_Example1.txt -^> CODED.TXT ===
+biology.exe 1 1 %INPUT_FILE% txtFiles\CODED.txt
 
 if errorlevel 1 (
 echo [ERROR] Cell encoding failed.
@@ -41,27 +47,12 @@ exit /b 1
 )
 
 echo.
-echo === [2] Tissue: Decode CODED.txt -^> A02_DECODED.txt ===
-biology.exe 2 txtFiles\CODED.txt txtFiles\A02_DECODED.txt 2>txtFiles\A02_ERRORS.err
+echo === [3] Organ: Decode and scan CODED.txt -^> A03_SCANNER.txt ===
+biology.exe 3 txtFiles\CODED.txt txtFiles\compiler_scanner_dfa.txt >txtFiles\A03_SCANNER.txt 2>txtFiles\A03_ERRORS.err
 
 if errorlevel 1 (
-echo [ERROR] Tissue decoding failed.
+echo [ERROR] Organ scanning failed.
 exit /b 1
-)
-
-echo.
-echo === Verifying Tissue output ===
-
-REM ------------------------------------------------------------
-REM Verify that the Tissue decoded file matches the original
-REM ------------------------------------------------------------
-fc /b txtFiles\STEL_CODE1.txt txtFiles\A02_DECODED.txt >nul
-
-if errorlevel 1 (
-echo [FAIL] A02_DECODED.txt does not match STEL_CODE1.txt.
-exit /b 1
-) else (
-echo [ OK ] Tissue decoding verified.
 )
 
 echo.
