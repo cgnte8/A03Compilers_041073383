@@ -1,4 +1,4 @@
-# Stella Code Example 2			    #
+# Stella Code Example 2			            #
 # This example contains mathematics         #
 # This example will print the outcome       #
 # Connor Guenette - 041073383               #

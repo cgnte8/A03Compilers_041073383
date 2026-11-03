@@ -1,0 +1,70 @@
+# Stella Code Example 6	         #
+# This is a main program         #
+# Includes everything            #
+# Connor Guenette - 041073383    #
+
+STEL_int main&()
+{
+	STEL_data
+	{
+		# Integer Initializing #
+		STEL_int x$;
+		STEL_int y$;
+		STEL_int result1$;
+		STEL_int complete$;
+
+		# Float Initializing   #
+		STEL_float a%;
+		STEL_float b%;
+		STEL_float result2%;
+
+		# String Initializing  #
+		STEL_string message@;
+		STEL_string name@;
+		STEL_string goodbye@;	
+	}
+	STEL_code
+	{	
+		# Giving Integers a Value #
+		x$ = 10;
+		y$ = 5;
+		result1$ = x$ + y$;
+		complete$ = 1;
+	
+		# Giving Floats a Value   #	
+		a% = 3.14;
+		b% = 8.13;
+		result2% = a% + b%;
+
+		# Giving Strings a Value  #
+		message@ = "Welcome";
+		name@ = "Connor Guenette";
+
+		# Should only go through once #
+		do
+		{
+			# Print Values #
+			pout&(result1$);
+			pout&(result2%);
+			pout&(message@ + " " + name@);
+			
+			# End Loop #
+			complete$ = 0;
+		}
+		while(complete$ == 1);
+		
+		# Goodbye Message to User #
+		if (complete$ == 0) 
+		{
+			goodbye@ = "Goodbye!";
+			pout&(goodbye@ + " " + name@);
+		} 
+		# Should Never Reach #
+		else 
+		{
+			goodbye@ = "You can't leave!";
+			pout&(goodbye@ + " " + name@);
+		}
+	}
+	return 0;
+}

@@ -1,6 +1,6 @@
 # Stella Code Example 5	         #
-# This is a main program         #
-# Includes everything            #
+# This is a DSL Program          #
+# Includes DSL Code Examples     #
 # Connor Guenette - 041073383    #
 
 STEL_int main&()
@@ -8,62 +8,62 @@ STEL_int main&()
 	STEL_data
 	{
 		# Integer Initializing #
-		STEL_int x$;
-		STEL_int y$;
-		STEL_int result1$;
-		STEL_int complete$;
+		damage damage$;
+		attack attack$;
+		position position$;
+		level level$;
+		dead dead$;
+		move move$;
+		speed speed$;
+		jump jump$;
+		score score$;
 
 		# Float Initializing   #
-		STEL_float a%;
-		STEL_float b%;
-		STEL_float result2%;
+		health health%;
 
 		# String Initializing  #
-		STEL_string message@;
-		STEL_string name@;
-		STEL_string goodbye@;	
+		player player@;
+		enemy enemy@;	
 	}
 	STEL_code
 	{	
 		# Giving Integers a Value #
-		x$ = 10;
-		y$ = 5;
-		result1$ = x$ + y$;
-		complete$ = 1;
-	
-		# Giving Floats a Value   #	
-		a% = 3.14;
-		b% = 8.13;
-		result2% = a% + b%;
+		damage$ = 2d6;  # Dice roll for enemy damage #
+		attack$ = 1d20; # Dice roll for attack	     #	
+		position$ = 0;  # Player position X	         #
+		level$ = 1;	    # Player Level			     #
+		dead$ = 0;	    # 1 is dead, 0 is alive	     #
+		move$ = 0;	    # 1 is moving, 0 is not	     #
+		speed$ = 2;	    # Player speed			     #
+		jump$ = 1;	    # Jump height                #
+		score$ = 0;	    # Player score			     #
+
+		# Giving Float a Value     #
+		health% = 100.0;
 
 		# Giving Strings a Value  #
-		message@ = "Welcome";
-		name@ = "Connor Guenette";
+		player@ = "Connor";
+		enemy@ = "Gargamel";
 
-		# Should only go through once #
-		do
+		if (move$ == 1)
 		{
-			# Print Values #
-			pout&(result1$);
-			pout&(result2%);
-			pout&(message@ + " " + name@);
-			
-			# End Loop #
-			complete$ = 0;
+			position$ = position$ + speed$;
 		}
-		while(complete$ == 1);
-		
-		# Goodbye Message to User #
-		if (complete$ == 0) 
+
+		if (health% <= 0)
 		{
-			goodbye@ = "Goodbye!";
-			pout&(goodbye@ + " " + name@);
-		} 
-		# Should Never Reach #
-		else 
+			dead$ = 1;
+		}
+
+		if (dead$ == 0)
 		{
-			goodbye@ = "You can't leave!";
-			pout&(goodbye@ + " " + name@);
+			# Print String #
+			pout&(player@ + " is alive!");
+			score$++; # Increment score #
+		}
+		else
+		{
+			pout&(player@ + " is dead!");
 		}
 	}
 	return 0;

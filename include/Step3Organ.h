@@ -72,7 +72,7 @@
 #define CHAR_CLASSES 12     /* character classes = transition columns of the DFA  */
 
 /* TO_DO: Define the number of tokens */
-#define NUM_SIGNALS 23
+#define NUM_SIGNALS 24
 
 /* Default data-file paths (DEFAULT_DFA_FILE, DEFAULT_GRAMMAR_FILE,
  * DEFAULT_RUNNER_CONFIG) are defined once, in Biology.h, and reused
@@ -102,7 +102,8 @@ enum SIGNALS {
 	EOS_S,		/* 19: End of statement (semicolon) */
 	RTE_S,		/* 20: Run-time error token */
 	CMT_S,		/* 21: Comment token */
-	SEOF_S		/* 22: Source end-of-file token */
+	SEOF_S,		/* 22: Source end-of-file token */
+	DICE_S		/* 23: Dice token */
 };
 
 /* TO_DO: Define the list of keywords */
@@ -242,7 +243,8 @@ typedef enum {
     ACT_FLOAT,
     ACT_STRING,
     ACT_COMMENT,
-    ACT_ERROR
+    ACT_ERROR,
+	ACT_DICE
 } DFAAction;
 
 /* Accepting-state functions - called by the  scanner action dispatch */
@@ -253,6 +255,7 @@ Signal signalStringLiteral (STEL_string lexeme);
 Signal signalKeyword       (STEL_string lexeme);
 Signal signalError         (STEL_string lexeme);
 Signal signalComment       (STEL_string lexeme);
+Signal signalDice		   (STEL_string lexeme);
 
 STEL_int loadScannerDFA  (const STEL_string csvFile);
 STEL_int startOrgan    (TissuePointer psc_buf);

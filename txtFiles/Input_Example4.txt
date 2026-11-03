@@ -13,8 +13,8 @@ STEL_int main&()
 	}
 	STEL_code
 	{
-		hello@ = "Hello";		   # Hello #
-		name@ = "Connor Guenette";	   # Name #
+		hello@ = "Hello";				   # Hello #
+		name@ = "Connor Guenette";		   # Name #
 		program@ = "Computer Engineering"; # Program #
 
 		# Print Strings #

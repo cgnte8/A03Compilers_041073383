@@ -92,7 +92,7 @@ OrganData organData;						/* Scanner statistics */
 STEL_string signalStrTable[NUM_SIGNALS] = {	/* same order as enum SIGNALS */
 	"ERR_S", "IVID_S", "FVID_S", "SVID_S", "MNID_S", "INL_S", "FPL_S", "STR_S",
 	"SCC_OP_S", "ASS_OP_S", "ART_OP_S", "REL_OP_S", "LOG_OP_S", "LPR_S", "RPR_S",
-	"LBR_S", "RBR_S", "KW_S", "COM_S", "EOS_S", "RTE_S", "CMT_S", "SEOF_S"
+	"LBR_S", "RBR_S", "KW_S", "COM_S", "EOS_S", "RTE_S", "CMT_S", "SEOF_S", "DICE_S"
 };
 
 /* Language data (keywords loaded from CSV; boundary is fixed) */
@@ -249,6 +249,57 @@ Signal signalError(STEL_string lexeme) {
     return t;
 }
 
+/* Allows to return signal for the dice token */
+/* Sample input: 2d6  (Must have digit, d, digit)*/
+Signal signalDice(STEL_string lexeme) {
+    Signal signal = { 0 };
+    STEL_int i = 0;
+
+    /* Check if the lexeme is valid and starts with a digit */
+    if (lexeme == NULL || !isdigit((unsigned char)lexeme[0])) {
+        return signalError(lexeme ? lexeme : "");
+    }
+    
+    /* Read dice count */
+	while (isdigit((unsigned char)lexeme[i])) {
+	    i++;
+	}
+
+    /* Must contain 'd' */
+    if (lexeme[i] != 'd') {
+        return signalError(lexeme);
+    }
+
+	i++; // Move past 'd'
+    
+    /* Must be a digit after 'd' */
+    if (!isdigit((unsigned char)lexeme[i])) {
+        return signalError(lexeme);
+    }
+
+    /* Read number of sides */
+    while (isdigit((unsigned char)lexeme[i])) {
+        i++;
+    }
+
+    /* Make sure there are no extra characters */
+    if (lexeme[i] != '\0') {
+        return signalError(lexeme);
+    }
+
+    /* Check if the lexeme is too long */
+    if (strlen(lexeme) > VID_LEN) {
+		return signalError(lexeme);
+    }
+
+	signal.code = DICE_S; // Set the signal code
+
+    /* Store the lexeme */
+    strcpy_s(signal.attribute.idLexeme, sizeof(signal.attribute.idLexeme), lexeme);
+
+    return signal;
+}
+
 /* ====================================================================
  * Organ  -  CSV-DFA-driven scanner (only version)
  * ==================================================================== */
@@ -288,6 +339,7 @@ static DFAAction parseAction(const STEL_string s) {
     if (strcmp(s, "STRING")     == 0) return ACT_STRING;
     if (strcmp(s, "COMMENT")    == 0) return ACT_COMMENT;
     if (strcmp(s, "ERROR")      == 0) return ACT_ERROR;
+	if (strcmp(s, "DICE")       == 0) return ACT_DICE;
     return ACT_NULL;
 }
 
@@ -676,6 +728,9 @@ Signal organScan(STEL_void) {
         break;
     case ACT_ERROR:
         result = signalError(lexeme);
+        break;
+    case ACT_DICE:
+        result = signalDice(lexeme);
         break;
     default:
         result = signalError(lexeme);

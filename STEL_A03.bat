@@ -1,6 +1,6 @@
 @echo off
 REM
-REM Run this script to build and test the biology program
+REM Run this script to build and test the Stella program
 REM for encoding and decoding text files.
 REM
 REM This script runs on Windows using GCC.
@@ -18,7 +18,7 @@ cd /d "%~dp0"
 
 echo Building Stella Compiler ...
 
-gcc -std=gnu99 -fcommon -w -o biology.exe ^
+gcc -std=gnu99 -fcommon -o STEL_A03.exe ^
 src\Biology.c ^
 src\Main1Cell.c ^
 src\Step1Cell.c ^
@@ -34,12 +34,12 @@ exit /b 1
 )
 
 REM Change this to whichever example you want to work with
-set "INPUT_FILE=txtFiles\Error_Example1.txt"
+set "INPUT_FILE=txtFiles\Input_Example5.txt"
 REM ------------------------------------------------------
 
 echo.
-echo === [1] Cell: Encode Input_Example1-5 || Error_Example1.txt -^> CODED.TXT ===
-biology.exe 1 1 %INPUT_FILE% txtFiles\CODED.txt
+echo === [1] Cell: Encode Input_Example1-6 || Error_Example1.txt -^> CODED.TXT ===
+STEL_A03.exe 1 1 %INPUT_FILE% txtFiles\CODED.txt
 
 if errorlevel 1 (
 echo [ERROR] Cell encoding failed.
@@ -48,7 +48,7 @@ exit /b 1
 
 echo.
 echo === [3] Organ: Decode and scan CODED.txt -^> A03_SCANNER.txt ===
-biology.exe 3 txtFiles\CODED.txt txtFiles\compiler_scanner_dfa.txt >txtFiles\A03_SCANNER.txt 2>txtFiles\A03_ERRORS.err
+STEL_A03.exe 3 txtFiles\CODED.txt txtFiles\compiler_scanner_dfa.txt >txtFiles\A03_SCANNER.txt 2>txtFiles\A03_ERRORS.err
 
 if errorlevel 1 (
 echo [ERROR] Organ scanning failed.

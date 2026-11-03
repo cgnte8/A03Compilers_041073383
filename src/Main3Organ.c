@@ -225,6 +225,7 @@ static STEL_void printSignal(Signal t) {
     case REL_OP_S: printf("%s\n", rel[t.attribute.relationalOperator]); break;
     case LOG_OP_S: printf("%s\n", lgc[t.attribute.logicalOperator]); break;
     case SEOF_S:   printf("%d\n", t.attribute.seofType); break;
+	case DICE_S:   printf("%s\n", t.attribute.idLexeme); break;
     default:       printf("\n");
     }
 }

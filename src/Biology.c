@@ -79,6 +79,17 @@ static STEL_int STELlogyDispatch(STEL_int argc, STEL_string *argv) {
 		printf("\n[%c] Organ  -- CSV-DFA driven scanner\n\n", PGM_ORGAN);
 		return main3Organ(argc, argv);
 
+	case '6':
+		printf("\n[6] Cell Tester\n\n");
+		return testCell(argc, argv);
+
+	case '7':
+		printf("\n[7] Tissue Tester\n\n");
+		return testTissue(argc, argv);
+
+	case '8':
+		printf("\n[8] Organ Tester\n\n");
+		return testOrgan(argc, argv);
 	/* ---- Help ---- */
 	case PGM_HELP:
 	case PGM_HELP_LONG:

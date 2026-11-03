@@ -127,6 +127,7 @@ typedef struct bufferReader {
 /* FUNCTIONS DECLARATION:  .................................. */
 
 /* General Operations */
+
 TissuePointer	tissueCreate		(STEL_int);
 TissuePointer	tissueAddCell		(TissuePointer const, STEL_char);
 STEL_bol		tissueClear		    (TissuePointer const);

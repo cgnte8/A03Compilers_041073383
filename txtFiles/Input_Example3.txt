@@ -1,4 +1,4 @@
-# Stella Code Example 3			       #
+# Stella Code Example 3					       #
 # This example contains conditional statements #
 # Connor Guenette - 041073383                  #
 
@@ -32,6 +32,6 @@ STEL_int main&()
 			}
 		}
 		while (x$ <= 5);
-	
 	}
+	return 0;
 }
