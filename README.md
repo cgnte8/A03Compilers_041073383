@@ -12,22 +12,23 @@ It supports game-related concepts such as players, enemies, health, damage, move
 
 
 Ways of Testing
-Run the STEL_A03_Complete.bat, it will append every test, input, and error example into txtFiles/testResults.txt
-Run the STEL_A03.bat, This is a single test, can run specific input or error examples by specifying the input file
+Run the Stella_Complete.bat, it will append every test, input, and error example into txtFiles/testResults.txt
+Run the Stella.bat, This is a single test, can run specific input or error examples by specifying the input file
 Run the MakeFile.
 cd build
 cmake ..
 make
-./STEL_A03 (Option)
+cd ..
+./build/Stella (Option)
 
 
 Input/Error Examples
-Input_Example1.txt ( Data Types  	    )
-Input_Example2.txt ( Mathematics 	    )
+Input_Example1.txt ( Data Types  	        )
+Input_Example2.txt ( Mathematics 	        )
 Input_Example3.txt ( Conditional Statements )
-Input_Example4.txt ( Strings		    )
-Input_Example5.txt ( DSL Examples	    )
-Input_Example6.txt ( Main Program	    )
+Input_Example4.txt ( Strings			    )
+Input_Example5.txt ( DSL Examples	        )
+Input_Example6.txt ( Main Program	        )
 
 Error_Example1.txt ( 5 Lexical Examples     )
 

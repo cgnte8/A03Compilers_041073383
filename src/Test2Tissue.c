@@ -64,7 +64,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../include/Biology.h"
+#include "../include/Stella.h"
 #include "../include/Step1Cell.h"
 #include "../include/Step2Tissue.h"
 

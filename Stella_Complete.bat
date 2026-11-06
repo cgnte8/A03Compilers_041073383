@@ -15,8 +15,8 @@ cd /d "%~dp0"
 
 echo Building Stella Compiler ...
 
-gcc -std=gnu99 -fcommon -o STEL_Tests.exe ^
-src\Biology.c ^
+gcc -std=gnu99 -fcommon -o Stella_Full.exe ^
+src\Stella.c ^
 src\Main1Cell.c ^
 src\Step1Cell.c ^
 src\Test1Cell.c ^
@@ -35,7 +35,7 @@ exit /b 1
 
 echo.
 echo === [6] Test: Run all tests for Cell ===
-STEL_Tests.exe 6 > txtFiles/testResults.txt
+Stella_Full.exe 6 > txtFiles/testResults.txt
 
 if errorlevel 1 (
 	echo [ERROR] Cell tests failed.
@@ -44,7 +44,7 @@ if errorlevel 1 (
 
 echo.
 echo === [7] Test: Run all tests for Tissue ===
-STEL_Tests.exe 7 >> txtFiles/testResults.txt
+Stella_Full.exe 7 >> txtFiles/testResults.txt
 
 if errorlevel 1 (
 	echo [ERROR] Tissue tests failed.
@@ -53,7 +53,7 @@ if errorlevel 1 (
 
 echo.
 echo === [8] Test: Run all tests for Organ ===
-STEL_Tests.exe 8 >> txtFiles\testResults.txt
+Stella_Full.exe 8 >> txtFiles\testResults.txt
 
 if errorlevel 1 (
 	echo [ERROR] Organ tests failed.
@@ -73,7 +73,7 @@ for /L %%i in (1,1,6) do (
 
 	echo.
 	echo === [1] Cell: Encode Input_Example%%i -^> CODED.TXT ===
-	STEL_Tests.exe 1 1 txtFiles\Input_Example%%i.txt txtFiles\CODED.txt
+	Stella_Full.exe 1 1 txtFiles\Input_Example%%i.txt txtFiles\CODED.txt
 
 	if errorlevel 1 (
 		echo [ERROR] Cell encoding failed.
@@ -82,7 +82,7 @@ for /L %%i in (1,1,6) do (
 
 	echo.
 	echo === [3] Organ: Decode and scan CODED.txt -^> testResults.txt ===
-	STEL_Tests.exe 3 txtFiles\CODED.txt txtFiles\compiler_scanner_dfa.txt >> txtFiles\testResults.txt
+	Stella_Full.exe 3 txtFiles\CODED.txt txtFiles\compiler_scanner_dfa.txt >> txtFiles\testResults.txt
 
 	if errorlevel 1 (
 		echo [ERROR] Organ scanning failed.
@@ -98,7 +98,7 @@ echo === Testing Error Example ===
 
 echo.
 echo === [1] Cell: Encode Error_Example1.txt -^> CODED.TXT ===
-STEL_Tests.exe 1 1 txtFiles\Error_Example1.txt txtFiles\CODED.txt
+Stella_Full.exe 1 1 txtFiles\Error_Example1.txt txtFiles\CODED.txt
 
 if errorlevel 1 (
 	echo [ERROR] Cell encoding failed.
@@ -107,7 +107,7 @@ if errorlevel 1 (
 
 echo.
 echo === [3] Organ: Decode and scan CODED.txt -^> testResults.txt ===
-STEL_Tests.exe 3 txtFiles\CODED.txt txtFiles\compiler_scanner_dfa.txt >> txtFiles\testResults.txt
+Stella_Full.exe 3 txtFiles\CODED.txt txtFiles\compiler_scanner_dfa.txt >> txtFiles\testResults.txt
 
 if errorlevel 1 (
 	echo.

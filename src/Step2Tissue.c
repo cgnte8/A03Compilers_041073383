@@ -53,8 +53,8 @@
 #include <ctype.h>
 #include <string.h>
 
-#ifndef BIOLOGY_H_
-#include "../include/Biology.h"
+#ifndef STELLA_H_
+#include "../include/Stella.h"
 #endif
 
 #ifndef CELL_H_

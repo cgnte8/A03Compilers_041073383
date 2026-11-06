@@ -8,5 +8,7 @@ if exist txtFiles\DECODED.txt del /q txtFiles\DECODED.txt 2>nul
 if exist txtFiles\testResults.txt del /q txtFiles\testResults.txt 2>nul
 if exist txtFiles\A03_Errors.err del /q txtFiles\A03_ERRORS.err 2>nul
 if exist txtFiles\A03_SCANNER.txt del /q txtFiles\A03_SCANNER.txt 2>nul
-echo Done.
+if exist txtFiles\output.txt del /q txtFiles\output.txt 2>nul
+if exist build\ rmdir /s /q build 2>nul
+echo Everything Successfully Deleted
 echo.

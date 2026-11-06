@@ -18,14 +18,17 @@ cd /d "%~dp0"
 
 echo Building Stella Compiler ...
 
-gcc -std=gnu99 -fcommon -o STEL_A03.exe ^
-src\Biology.c ^
+gcc -std=gnu99 -fcommon -o Stella.exe ^
+src\Stella.c ^
 src\Main1Cell.c ^
 src\Step1Cell.c ^
+src\Test1Cell.c ^
 src\Step2Tissue.c ^
 src\Main2Tissue.c ^
+src\Test2Tissue.c ^
 src\Step3Organ.c ^
 src\Main3Organ.c ^
+src\Test3Organ.c ^
 -lm
 
 if errorlevel 1 (
@@ -39,23 +42,24 @@ REM ------------------------------------------------------
 
 echo.
 echo === [1] Cell: Encode Input_Example1-6 || Error_Example1.txt -^> CODED.TXT ===
-STEL_A03.exe 1 1 %INPUT_FILE% txtFiles\CODED.txt
+Stella.exe 1 1 %INPUT_FILE% txtFiles\CODED.txt
 
 if errorlevel 1 (
 echo [ERROR] Cell encoding failed.
+type txtFiles\A03_ERRORS.err
 exit /b 1
 )
 
 echo.
 echo === [3] Organ: Decode and scan CODED.txt -^> A03_SCANNER.txt ===
-STEL_A03.exe 3 txtFiles\CODED.txt txtFiles\compiler_scanner_dfa.txt >txtFiles\A03_SCANNER.txt 2>txtFiles\A03_ERRORS.err
+Stella.exe 3 txtFiles\CODED.txt txtFiles\compiler_scanner_dfa.txt >txtFiles\A03_SCANNER.txt 2>txtFiles\A03_ERRORS.err
 
 if errorlevel 1 (
 echo [ERROR] Organ scanning failed.
+type txtFiles\A03_ERRORS.err
 exit /b 1
 )
 
 echo.
 echo === All tests passed! ===
-
 exit /b 0

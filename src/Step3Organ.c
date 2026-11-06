@@ -63,8 +63,8 @@
 
 /* project header files */
 
-#ifndef STELLOGY_H_
-#include "../include/Biology.h"
+#ifndef STELLA_H_
+#include "../include/Stella.h"
 #endif
 
 #ifndef TISSUE_H_

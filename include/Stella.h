@@ -9,7 +9,7 @@
 
 /*
 ************************************************************
-* File name: Compilers.h
+* File name: Stella.h
 * Compiler: MS Visual Studio 2022 / GCC (C89 -ansi -pedantic)
 * Course: CST 8152 - Compilers
 * Assignment: A1.
@@ -21,8 +21,8 @@
 * Function list: main1Cell().
 *************************************************************/
 
-#ifndef BIOLOGY_H_
-#define BIOLOGY_H_
+#ifndef STELLA_H_
+#define STELLA_H_
 
 #define DEBUG 0
 

@@ -42,8 +42,8 @@
 * Function list: (...).
 *************************************************************/
 
-#ifndef BIOLOGY_H_
-#include "Biology.h"
+#ifndef STELLA_H_
+#include "Stella.h"
 #endif
 
 #ifndef TISSUE_H_

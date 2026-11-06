@@ -17,17 +17,18 @@ Run the STEL_A03.bat, This is a single test, can run specific input or error exa
 Run the MakeFile.
 cd build
 cmake ..
-make
-./STEL_A03 (Option)
+make 
+cd ..
+./build/Stella (Option)
 
 
 Input/Error Examples
-Input_Example1.txt ( Data Types  	    )
-Input_Example2.txt ( Mathematics 	    )
+Input_Example1.txt ( Data Types  	        )
+Input_Example2.txt ( Mathematics 	        )
 Input_Example3.txt ( Conditional Statements )
-Input_Example4.txt ( Strings		    )
-Input_Example5.txt ( DSL Examples	    )
-Input_Example6.txt ( Main Program	    )
+Input_Example4.txt ( Strings		        )
+Input_Example5.txt ( DSL Examples	        )
+Input_Example6.txt ( Main Program		    )
 Error_Example1.txt ( 5 Lexical Examples     )
 
 

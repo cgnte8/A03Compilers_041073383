@@ -63,8 +63,8 @@
 #include <string.h>
 #include <stdarg.h>
 
-#ifndef BIOLOGY_H_
-#include "../include/Biology.h"
+#ifndef STELLA_H_
+#include "../include/Stella.h"
 #endif
 
 #ifndef TISSUE_H_
