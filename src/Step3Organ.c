@@ -142,10 +142,10 @@ Signal signalIdentifier(STEL_string lexeme) {
     }
     /* Classify by variable-suffix character, and store lexeme for grammar lookahead */
     switch (last) {
-    case DOL_CHR: t.code = IVID_S; break;
-    case PTG_CHR: t.code = FVID_S; break;
-    case ATT_CHR: t.code = SVID_S; break;
-    case AMP_CHR: t.code = MNID_S; break;
+    case HST_CHR: t.code = IVID_S; break;
+    case DOL_CHR: t.code = FVID_S; break;
+    case PTG_CHR: t.code = SVID_S; break;
+    case ATT_CHR: t.code = MNID_S; break;
     default:
         return signalError(lexeme);            /* no valid type suffix */
     }
@@ -395,7 +395,7 @@ STEL_int loadScannerDFA(const STEL_string csvFile) {
             else section = 0;
             continue;
         }
-        if (*p == '#') continue; /* comments */
+        if (*p == '~') continue; /* comments */
 
         if (section == 1) {      /* column names: their number must be CHAR_CLASSES */
             STEL_int cols = 1;
@@ -489,12 +489,12 @@ static STEL_int charClass(STEL_char c) {
     switch (c) {
     case '_':  return 2;  /* U */
     case '.':  return 3;  /* P */
-    case '$':  return 4;  /* I */
-    case '%':  return 5;  /* F */
-    case '@':  return 6;  /* S */
-    case '&':  return 7;  /* M */
+    case '#':  return 4;  /* I */
+    case '$':  return 5;  /* F */
+    case '%':  return 6;  /* S */
+    case '@':  return 7;  /* M */
     case '"':  return 8;  /* Q */
-    case '#':  return 9;  /* C */
+    case '~':  return 9;  /* C */
     case '\0': return 10; /* E */
     default:
         if ((STEL_int)(unsigned char)c == 255 || c == EOF) return 10; /* E */

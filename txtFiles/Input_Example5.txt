@@ -1,69 +1,69 @@
-# Stella Code Example 5	         #
-# This is a DSL Program          #
-# Includes DSL Code Examples     #
-# Connor Guenette - 041073383    #
+~ Stella Code Example 5          ~
+~ This is a DSL Program          ~
+~ Includes DSL Code Examples     ~
+~ Connor Guenette - 041073383    ~
 
-STEL_int main&()
+STEL_int main@()
 {
 	STEL_data
 	{
-		# Integer Initializing #
-		damage damage$;
-		attack attack$;
-		position position$;
-		level level$;
-		dead dead$;
-		move move$;
-		speed speed$;
-		jump jump$;
-		score score$;
+		~ Integer Initializing ~
+		damage damage#;
+		attack attack#;
+		position position#;
+		level level#;
+		dead dead#;
+		move move#;
+		speed speed#;
+		jump jump#;
+		score score#;
 
-		# Float Initializing   #
-		health health%;
+		~ Float Initializing   ~
+		health health$;
 
-		# String Initializing  #
-		player player@;
-		enemy enemy@;	
+		~ String Initializing  ~
+		player player%;
+		enemy enemy%;	
 	}
 	STEL_code
 	{	
-		# Giving Integers a Value #
-		damage$ = 2d6;  # Dice roll for enemy damage #
-		attack$ = 1d20; # Dice roll for attack	     #	
-		position$ = 0;  # Player position X	         #
-		level$ = 1;	    # Player Level			     #
-		dead$ = 0;	    # 1 is dead, 0 is alive	     #
-		move$ = 0;	    # 1 is moving, 0 is not	     #
-		speed$ = 2;	    # Player speed			     #
-		jump$ = 1;	    # Jump height                #
-		score$ = 0;	    # Player score			     #
+		~ Giving Integers a Value ~
+		damage# = 2d6;  ~ Dice roll for enemy damage ~
+		attack# = 1d20; ~ Dice roll for attack       ~	
+		position# = 0;  ~ Player position X          ~
+		level# = 1;     ~ Player Level               ~
+		dead# = 0;      ~ 1 is dead, 0 is alive      ~
+		move# = 0;      ~ 1 is moving, 0 is not      ~
+		speed# = 2;     ~ Player speed               ~
+		jump# = 1;      ~ Jump height                ~
+		score# = 0;     ~ Player score               ~
 
-		# Giving Float a Value     #
-		health% = 100.0;
+		~ Giving Float a Value ~
+		health$ = 100.0;
 
-		# Giving Strings a Value  #
-		player@ = "Connor";
-		enemy@ = "Gargamel";
+		~ Giving Strings a Value ~
+		player% = "Connor";
+		enemy% = "Gargamel";
 
-		if (move$ == 1)
+		if (move# == 1)
 		{
-			position$ = position$ + speed$;
+			position# = position# + speed#;
 		}
 
-		if (health% <= 0)
+		if (health$ <= 0)
 		{
-			dead$ = 1;
+			dead# = 1;
 		}
 
-		if (dead$ == 0)
+		if (dead# == 0)
 		{
-			# Print String #
-			pout&(player@ + " is alive!");
-			score$++; # Increment score #
+			~ Print String ~
+			pout@(player% + " is alive!");
+			score#++; ~ Increment score ~
 		}
 		else
 		{
-			pout&(player@ + " is dead!");
+			pout@(player% + " is dead!");
 		}
 	}
 	return 0;

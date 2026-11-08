@@ -1,39 +1,39 @@
-# Stella Code Error Example 1    #
-# Similar to Input Example 1     #
-# Has Multiple Errors            #
-# Connor Guenette - 041073383    #
+~ Stella Code Error Example 1    ~
+~ Similar to Input Example 1     ~
+~ Has Multiple Errors            ~
+~ Connor Guenette - 041073383    ~
 
-STEL_int main&() 
+STEL_int main@() 
 {
 	STEL_data 
 	{	
-		STEL_int age$;
-		STEL_int x$;
-		STEL_float height%;
-		STEL_string name@;
+		STEL_int age#;
+		STEL_int x#;
+		STEL_float height$;
+		STEL_string name%;
 
-		# ERROR: Invalid variable name #
+		~ ERROR: Invalid variable name ~
 		STEL_string _hello;
 	}
 	
 	STEL_code
 	{
-		# ERROR: Number is too large #
-		age$ = 2143324237843784324;
+		~ ERROR: Number is too large ~
+		age# = 2143324237843784324;
 		
-		# ERROR: Invalid integer #
-		x$ = 314d;
+		~ ERROR: Invalid integer ~
+		x# = 314d;
 		
-		# ERROR : Invalid float #
-		height% = 5.s;
-		name@ = "Connor Guenette";
+		~ ERROR : Invalid float ~
+		height$ = 5.s;
+		name% = "Connor Guenette";
 	
-		# ERROR: Random Spam #
+		~ ERROR: Random Spam ~
 		RandomWordsPutTogetherShouldntWork;
 
-		pout&(name@);
+		pout@(name%);
 		
-		# ERROR: Unknown Char #
+		~ ERROR: Unknown Char ~
 		?		
 	}
 	return 0;

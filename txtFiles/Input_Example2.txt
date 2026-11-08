@@ -1,33 +1,33 @@
-# Stella Code Example 2			            #
-# This example contains mathematics         #
-# This example will print the outcome       #
-# Connor Guenette - 041073383               #
+~ Stella Code Example 2                     ~
+~ This example contains mathematics         ~
+~ This example will print the outcome       ~
+~ Connor Guenette - 041073383               ~
 
-STEL_int main&() 
+STEL_int main@() 
 {
 	STEL_data 
 	{
-		STEL_int x$;
-		STEL_int y$;
+		STEL_int x#;
+		STEL_int y#;
 
-		STEL_float a%;
-		STEL_float b%;
+		STEL_float a$;
+		STEL_float b$;
 	}
 
 	STEL_code 
 	{
-		# Give Values #
-		x$ = 5;
-		y$ = 10;
-		x$ = x$ + y$;
+		~ Give Values ~
+		x# = 5;
+		y# = 10;
+		x# = x# + y#;
 
-		# Arithmetic #
-		x$++;
+		~ Arithmetic  ~
+		x#++;
 
-		# Give Values #
-		a% = 3.14;
-		b% = 2.83;
-		a% = a% + b%;
+		~ Give Values ~
+		a$ = 3.14;
+		b$ = 2.83;
+		a$ = a$ + b$;
 
 	}
 	return 0;

@@ -1,26 +1,26 @@
-# Stella Code Example 4	         #
-# This example contains strings  #
-# Comment on each line           #
-# Connor Guenette - 041073383    #
+~ Stella Code Example 4          ~
+~ This example contains strings  ~
+~ Comment on each line           ~
+~ Connor Guenette - 041073383    ~
 
-STEL_int main&() 
+STEL_int main@() 
 {
 	STEL_data
 	{
-		STEL_string hello@;   # Hello Message #
-		STEL_string name@;    # Name          #
-		STEL_string program@; # Program Name  #
+		STEL_string hello%;   ~ Hello Message ~
+		STEL_string name%;    ~ Name          ~
+		STEL_string program%; ~ Program Name  ~
 	}
 	STEL_code
 	{
-		hello@ = "Hello";				   # Hello #
-		name@ = "Connor Guenette";		   # Name #
-		program@ = "Computer Engineering"; # Program #
+		hello% = "Hello";                  ~ Hello   ~
+		name% = "Connor Guenette";         ~ Name    ~
+		program% = "Computer Engineering"; ~ Program ~
 
-		# Print Strings #
-		pout&(hello@);
-		pout&(name@);
-		pout&(program@);
+		~ Print Strings ~
+		pout@(hello%);
+		pout@(name%);
+		pout@(program%);
 	}
 	return 0;
 }

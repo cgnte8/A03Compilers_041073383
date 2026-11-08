@@ -170,7 +170,7 @@ typedef struct scannerData {
 #define DOL_CHR '$'		// CH02
 #define PTG_CHR '%'		// CH03
 #define ATT_CHR '@'		// CH04
-#define AMP_CHR '&'		// CH05
+#define TIL_CHR '~'		// CH05
 #define HST_CHR '#'		// CH06
 #define UND_CHR '_'		// CH07
 #define DOT_CHR '.'		// CH08

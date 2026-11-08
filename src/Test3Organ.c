@@ -148,15 +148,15 @@ STEL_int testOrgan(STEL_int argc, STEL_string* argv) {
     testFirstToken("Keyword: STEL_int", "STEL_int ", KW_S);
     testFirstToken("Game keyword: damage", "damage ", KW_S);
 
-    testFirstToken("Integer identifier: score$", "score$ ", IVID_S);
-    testFirstToken("Float identifier: health%", "health% ", FVID_S);
-    testFirstToken("String identifier: player@", "player@ ", SVID_S);
-    testFirstToken("Method identifier: main&", "main& ", MNID_S);
+    testFirstToken("Integer identifier: score$", "score# ", IVID_S);
+    testFirstToken("Float identifier: health%", "health$ ", FVID_S);
+    testFirstToken("String identifier: player@", "player% ", SVID_S);
+    testFirstToken("Method identifier: main&", "main@ ", MNID_S);
 
     testFirstToken("Integer literal: 123", "123;", INL_S);
     testFirstToken("Float literal: 12.75", "12.75;", FPL_S);
     testFirstToken("String literal", "\"Hello World!\";", STR_S);
-    testFirstToken("Comment", "# comment # ", CMT_S);
+    testFirstToken("Comment", "~ comment ~ ", CMT_S);
 
     testFirstToken("Assignment operator", "= ", ASS_OP_S);
     testFirstToken("Equality operator", "== ", REL_OP_S);
@@ -166,7 +166,7 @@ STEL_int testOrgan(STEL_int argc, STEL_string* argv) {
     testFirstToken("Dice literal: 1d20", "1d20;", DICE_S);
 
     testFirstToken("Invalid unsuffixed word", "unknownWord ", ERR_S);
-    testFirstToken("Invalid leading underscore", "_invalid$ ", ERR_S);
+    testFirstToken("Invalid leading underscore", "_invalid# ", ERR_S);
     testFirstToken("Invalid dice separator", "2x6;", ERR_S);
     testFirstToken("Integer overflow", "999999;", ERR_S);
     testFirstToken("Invalid decimal: 12.", "12.;", ERR_S);
